@@ -391,8 +391,8 @@ typedef struct Parser
 #define SHORTINCR(offs) ((offs)+=sizeof(short));
 #endif
 
-#define YYPARSE_PARAM parser
-#define YYLEX_PARAM parser
+//#define YYPARSE_PARAM parser
+//#define YYLEX_PARAM parser
 #define	YYINITDEPTH 64
 #define PARSER ((Parser*)parser)
 #undef __GNUC__
@@ -435,7 +435,9 @@ static void add_deep(Function *fp, int no);
 	int i;
 }
 
-%pure_parser
+%pure-parser
+%parse-param {void *parser}
+%lex-param {void *parser}
 
 %token <string> STRING
 %token <Double> NUMBER

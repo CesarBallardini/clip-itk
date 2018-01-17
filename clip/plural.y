@@ -26,8 +26,8 @@ paul
 #include <string.h>
 #include "plural.h"
 
-#define YYPARSE_PARAM arg
-#define YYLEX_PARAM arg
+//#define YYPARSE_PARAM arg
+//#define YYLEX_PARAM arg
 /* #define YYINITDEPTH 64 */
 #define PLURAL_DATA ((PluralData*)arg)
 
@@ -80,7 +80,9 @@ struct PluralData
 
 %}
 
-%pure_parser
+%pure-parser
+%lex-param {void *arg}
+%parse-param {void *arg}
 
 %union {
   unsigned long int num;
