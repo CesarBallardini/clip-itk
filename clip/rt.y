@@ -400,7 +400,7 @@ typedef struct Parser
 
 int rtlex();
 void rt_error(Parser *parser, char *fmt,...);
-#define rterror(msg) rt_error(PARSER, "%s", msg);
+#define rterror(msg,...) rt_error( PARSER, "%s", msg);
 static int installName(Parser *parser, long hash, int memvar, int lval, long area, int fld);
 static void gen_op(Parser *parser, int op);
 static void add_deep(Function *fp, int no);

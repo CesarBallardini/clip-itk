@@ -105,7 +105,7 @@ static inline struct expression *new_exp_3 (enum operator op,
 						   struct expression *tbranch,
 						   struct expression *fbranch);
 static int plurallex (YYSTYPE *lval, PluralData *pdata);
-static void pluralerror (const char *str);
+static void pluralerror (const char *str,...);
 
 /* Allocation of expressions.  */
 
